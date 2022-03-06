@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white text-sm lg:text-base font-semibold tracking-normal fixed top-0 w-full py-3 px-4 border-b-2 border-opacity-50 border-gray-200"
+    class="bg-white text-sm lg:text-base font-semibold tracking-normal fixed top-0 w-full py-2 px-4 border-b-2 border-opacity-50 border-gray-200"
   >
     <div class="flex justify-between items-center text-gray-800">
       <div>

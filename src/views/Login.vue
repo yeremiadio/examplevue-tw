@@ -1,6 +1,6 @@
 <template>
   <div class="grid place-items-center h-screen bg-gray-800">
-    <div class="bg-white w-72 lg:w-96 px-4 py-6 rounded-md">
+    <div class="bg-white w-96 px-4 py-6 rounded-md">
       <div>
         <h3 class="text-center font-bold text-gray-800 text-xl">Welcome</h3>
         <p class="text-center text-gray-600 text-base">
@@ -46,7 +46,6 @@
               />
               <label for="rememberme"> Remember Me</label><br />
             </div>
-            {{ JSON.stringify(auth) }}
             <button
               type="submit"
               class="px-5 lg:px-6 py-2 w-full rounded-md bg-gray-800 transition-all delay-75 hover:bg-gray-900 text-white"
@@ -62,21 +61,22 @@
 <script>
 import { reactive } from "@vue/reactivity";
 import { useStore } from "vuex";
-import { computed } from "@vue/runtime-core";
+import { useRouter } from "vue-router";
 export default {
   setup() {
     const store = useStore();
+    const router = useRouter();
     const values = reactive({
       email: "",
       password: "",
       rememberMe: false,
     });
-    const auth = computed(() => store.state.auth);
 
     const onSubmit = async (val) => {
       await store.dispatch("loginUser", val);
+      router.push("/admin/dashboard");
     };
-    return { onSubmit, values, auth };
+    return { onSubmit, values };
   },
 };
 </script>

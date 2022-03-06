@@ -33,12 +33,11 @@ const routes = [
     component: () => import("../views/Login.vue"),
   },
   {
-    path: "/admin/dashboard",
     name: "admin.DashboardPage",
     component: () => import("../components/layouts/AdminLayout.vue"),
     children: [
       {
-        path: "",
+        path: "/admin/dashboard",
         component: () => import("../views/admin/DashboardPage.vue"),
         name: "Dashboard",
       },

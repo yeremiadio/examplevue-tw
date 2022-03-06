@@ -11,7 +11,7 @@
     :completeButtonRef="completeButtonRef"
     :navigations="navigations"
   />
-  <main class="mt-20">
+  <main class="px-4 mt-24">
     <router-view />
   </main>
 </template>
@@ -34,7 +34,6 @@ export default {
       navigations,
       completeButtonRef,
       openSideBar() {
-        // console.clear();
         isOpen.value = true;
       },
       closeSideBar() {

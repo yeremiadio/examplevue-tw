@@ -29,6 +29,7 @@
                 <router-link
                   tag="span"
                   :to="item.href"
+                  @click="closeSideBar"
                   replace
                   active-class="rounded text-gray-50 flex font-semibold w-full items-center space-x-3 py-2 px-4 cursor-pointer bg-gray-800 transition-all delay-75 hover:bg-gray-900"
                   class="rounded flex w-full items-center space-x-3 py-2 px-4 group-hover:text-gray-800 cursor-pointer font-normal text-gray-600"

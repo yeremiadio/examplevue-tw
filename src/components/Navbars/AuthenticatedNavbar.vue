@@ -1,8 +1,10 @@
 <template>
   <div
-    class="bg-white text-sm lg:text-base font-semibold tracking-normal fixed top-0 w-full py-3 px-4 border-b-2 border-opacity-50 border-gray-200"
+    class="bg-white text-sm lg:text-base font-semibold tracking-normal fixed top-0 w-full py-2 px-4 border-b-2 border-opacity-50 border-gray-200"
   >
-    <div class="flex justify-between items-center text-gray-800">
+    <div
+      class="flex justify-between items-center text-gray-800 lg:px-6 py-3"
+    >
       <div>
         <div @click="openSideBar" :ref="completeButtonRef">
           <x-icon
@@ -23,11 +25,7 @@
         </div>
       </div>
       <div class="flex flex-row gap-4">
-        <button
-          class="px-5 lg:px-6 py-3 rounded-md bg-gray-800 transition-all delay-75 hover:bg-gray-900 text-white"
-        >
-          Create Account
-        </button>
+        {{ auth.user.email }}
       </div>
     </div>
   </div>
@@ -35,12 +33,16 @@
 <script>
 import Navigation from "./Navigation.vue";
 import { MenuAlt1Icon, XIcon } from "@heroicons/vue/solid";
+import { useStore } from "vuex";
+import { computed } from "@vue/runtime-core";
 export default {
   setup(props, ctx) {
+    const store = useStore();
+    const auth = computed(() => store.state.auth);
     function openSideBar() {
       ctx.emit("openSideBar");
     }
-    return { openSideBar };
+    return { openSideBar, auth };
   },
   emits: ["openSideBar"],
   props: {

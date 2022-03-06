@@ -4,7 +4,7 @@
       as="div"
       @close="closeSideBar"
       :initialFocus="completeButtonRef"
-      class="fixed inset-0 top-9 z-40 md:hidden"
+      class="fixed inset-0 top-[28px] z-40 md:hidden"
     >
       <TransitionChild
         enter="transition ease-in-out duration-300 transform"
