@@ -1,1 +1,9 @@
+export const UPDATE_POST = "UPDATE_POST";
+export const DELETE_POST = "DELETE_POST";
+export const SET_POST = "SET_POST";
+export const GET_ALL_POST = "GET_ALL_POST";
+export const GET_ALL_USER = "GET_ALL_USER";
+export const GET_USER = "GET_USER";
 export const SET_USER = "SET_USER";
+export const DELETE_USER = "DELETE_USER";
+export const UPDATE_USER = "UPDATE_USER";
