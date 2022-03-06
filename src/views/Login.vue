@@ -1,6 +1,6 @@
 <template>
   <div class="grid place-items-center h-screen bg-gray-800">
-    <div class="bg-white w-96 px-4 py-6 rounded-md">
+    <div class="bg-white w-11/12 md:w-7/12 lg:w-96 px-4 py-6 rounded-md">
       <div>
         <h3 class="text-center font-bold text-gray-800 text-xl">Welcome</h3>
         <p class="text-center text-gray-600 text-base">
