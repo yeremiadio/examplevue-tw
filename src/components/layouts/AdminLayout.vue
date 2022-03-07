@@ -30,10 +30,7 @@ export default {
     const isOpen = ref(false);
     const completeButtonRef = ref(null);
     watchEffect(() => {
-      if (
-        !auth.value.isAuthenticated &&
-        Object.keys(auth.value.user).length === 0
-      ) {
+      if (Object.keys(auth?.value?.data).length === 0) {
         router.replace("/login");
       }
     });

@@ -33,6 +33,11 @@ const routes = [
     component: () => import("../views/Login.vue"),
   },
   {
+    path: "/register",
+    name: "register",
+    component: () => import("../views/Register.vue"),
+  },
+  {
     name: "admin.DashboardPage",
     component: () => import("../components/layouts/AdminLayout.vue"),
     children: [

@@ -10,6 +10,21 @@
           <form @submit.prevent="onSubmit(values)">
             <div class="my-4">
               <label
+                for="name"
+                class="block text-gray-700 text-sm font-medium mb-1"
+                >Username</label
+              >
+              <input
+                type="text"
+                v-model="values.name"
+                autocomplete="text"
+                id="name"
+                class="appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:border-gray-700 focus:ring-gray-700"
+                placeholder="Masukkan Username..."
+              />
+            </div>
+            <div class="my-4">
+              <label
                 for="email"
                 class="block text-gray-700 text-sm font-medium mb-1"
                 >Email</label
@@ -38,20 +53,20 @@
               />
             </div>
             <div class="my-2 text-right text-sm">
-              Don't have an account?
+              Already have an account?
               <router-link
                 as="a"
-                to="register"
+                to="login"
                 class="text-blue-600 hover:underline"
               >
-                Register
+                Login
               </router-link>
             </div>
             <button
               type="submit"
               class="px-5 lg:px-6 py-2 w-full rounded-md bg-gray-800 transition-all delay-75 hover:bg-gray-900 text-white"
             >
-              Login
+              Register
             </button>
           </form>
         </div>
@@ -64,18 +79,21 @@ import { reactive } from "@vue/reactivity";
 import { useStore } from "vuex";
 import { useRouter } from "vue-router";
 import { jsonToFormData } from "../utils/jsonToFormData";
+
 export default {
   setup() {
     const store = useStore();
     const router = useRouter();
     const values = reactive({
+      name: "",
       email: "",
       password: "",
     });
 
     const onSubmit = async (val) => {
+      val.password_confirmation = val.password;
       const formData = jsonToFormData(val);
-      await store.dispatch("loginUser", formData);
+      await store.dispatch("registerUser", formData);
       router.push("/admin/dashboard");
     };
     return { onSubmit, values };

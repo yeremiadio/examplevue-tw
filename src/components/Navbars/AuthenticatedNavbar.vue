@@ -2,9 +2,7 @@
   <div
     class="bg-white text-sm lg:text-base font-semibold tracking-normal fixed top-0 w-full py-2 px-4 border-b-2 border-opacity-50 border-gray-200"
   >
-    <div
-      class="flex justify-between items-center text-gray-800 lg:px-6 py-3"
-    >
+    <div class="flex justify-between items-center text-gray-800 lg:px-6 py-3">
       <div>
         <div @click="openSideBar" :ref="completeButtonRef">
           <x-icon
@@ -25,7 +23,7 @@
         </div>
       </div>
       <div class="flex flex-row gap-4">
-        {{ auth.user.email }}
+        {{ auth.data.user?.email }}
       </div>
     </div>
   </div>
